@@ -1,10 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe "books/show", type: :view do
+  let!(:author) { Author.create! name: "Estas" }
+
   before(:each) do
     @book = assign(:book, Book.create!(
       :title => "Title",
-      :image_url => "MyText"
+      :image_url => "MyText",
+      author_id: author.id
     ))
   end
 

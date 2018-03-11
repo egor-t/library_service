@@ -2,8 +2,9 @@ require 'rails_helper'
 
 RSpec.describe BooksController, type: :controller do
 
-  let(:valid_attributes) { { title: "test", image_url: "book_url" } }
-  let(:invalid_attributes) { { title: '', image_url: ''} }
+  let!(:author) { Author.create! name: "Aloha" }
+  let(:valid_attributes) { { title: "test", image_url: "book_url", author_id: author.id } }
+  let(:invalid_attributes) { { title: '', image_url: '' } }
 
   describe "GET #index" do
     it "returns a success response" do

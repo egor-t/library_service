@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   before_action :set_book, only: %i[show edit update destroy]
 
   def index
-    @books = Book.all
+    @books = Book.includes(:author)
   end
 
   def show
@@ -55,6 +55,6 @@ class BooksController < ApplicationController
     end
 
     def book_params
-      params.require(:book).permit(:title, :image_url)
+      params.require(:book).permit(:title, :image_url, :author_id)
     end
 end

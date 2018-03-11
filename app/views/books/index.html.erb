@@ -7,6 +7,7 @@
     <thead>
       <tr>
         <th>Title</th>
+        <th>Author</th>
         <th>
           <%= button_to "New Book", new_book_path, method: :get, class: "btn btn-light" %>
         </th>
@@ -17,8 +18,8 @@
     <tbody>
       <% @books.each do |book| %>
         <tr>
-
           <td><%= book.title %></td>
+          <td><%= book.author.name %> </td>
           <td>
             <div class="btn-group" role="group" aria-label="Possible actions for book">
               <%= button_to "Show", book, method: :get, class: "btn btn-light" %>
