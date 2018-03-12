@@ -8,3 +8,4 @@ author = Author.create!(name: 'Aloha')
   image_url = Faker::Internet.url
   Book.create!(title: title, image_url: image_url, author_id: author.id)
 end
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
