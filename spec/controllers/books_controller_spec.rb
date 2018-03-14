@@ -4,7 +4,9 @@ RSpec.describe BooksController, type: :controller do
 
   let!(:author) { Author.create! name: "Aloha" }
   let(:avatar) { File.new(Rails.root + 'spec/factories/images/dangerous.jpeg') }
-  let(:valid_attributes) { { title: "test", avatar: avatar, author_ids: [author.id] } }
+  let(:group) { Group.create! name: 'Sport' }
+  let(:valid_attributes) { { title: "test", avatar: avatar,
+                             author_ids: [author.id], group: group } }
   let(:invalid_attributes) { { title: '' } }
 
   describe "GET #index" do

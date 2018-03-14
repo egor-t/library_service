@@ -1,11 +1,8 @@
 Author.destroy_all
+Group.destroy_all
 Book.destroy_all
+AdminUser.destroy_all
 
-author = Author.create!(name: 'Aloha')
-
-10.times do
-  title = Faker::Book.title
-  image_url = Faker::Internet.url
-  Book.create!(title: title, image_url: image_url, author_id: author.id)
-end
+Author.create!(name: 'Aloha')
+Group.create!(name: 'Advanture')
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

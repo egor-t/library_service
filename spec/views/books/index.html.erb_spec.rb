@@ -2,18 +2,20 @@ require 'rails_helper'
 
 RSpec.describe "books/index", type: :view do
   let!(:author) { Author.create! name: "Estas" }
+  let(:avatar) { File.new(Rails.root + 'spec/factories/images/dangerous.jpeg') }
+  let(:group) { Group.create! name: 'Sport' }
 
   before(:each) do
     assign(:books, [
       Book.create!(
-        :title => "Title",
-        image_url: "image_url",
-        author_id: author.id
+        title: "Title",
+        avatar: avatar,
+        group: group
       ),
       Book.create!(
         title: "Title",
-        image_url: "image_url",
-        author_id: author.id
+        avatar: avatar,
+        group: group
       )
     ])
   end
