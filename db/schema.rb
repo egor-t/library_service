@@ -61,20 +61,18 @@ ActiveRecord::Schema.define(version: 20180314121455) do
     t.text "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "author_id"
     t.string "avatar_file_name"
     t.string "avatar_content_type"
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.index ["author_id"], name: "index_books_on_author_id"
+    t.integer "group_id"
+    t.index ["group_id"], name: "index_group_id"
   end
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "book_id"
-    t.index ["book_id"], name: "index_book_id"
   end
 
 end

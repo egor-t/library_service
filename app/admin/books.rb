@@ -26,7 +26,7 @@ permit_params :avatar, :title, author_ids: []
       tab 'Auhtors modification' do
         f.input :authors, as: :check_boxes, collection: Author.all.map { |x| [x.name, x.id] }
       end
-  end
+    end
     f.actions
   end
 
@@ -36,6 +36,7 @@ permit_params :avatar, :title, author_ids: []
       row :avatar do |book|
         image_tag book.avatar.url(:thumb)
       end
+      row :group
     end
   end
 

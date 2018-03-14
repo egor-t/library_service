@@ -1,13 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2">
+      <p>Title: <%= @book.title %></p>
+    </div>
+    <div class="col-sm-2">
+      <p>Group name: <%= @book.group.name %></p>
+    </div>
+  </div>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @book.image_url %>
-</p>
-
-<%= link_to 'Back', books_path %>
+  <div class="row">
+    <div class="col-8"><%= image_tag @book.avatar(:thumb) %></div>
+  </div>
+  <%= link_to 'Back', books_path %>
+</div>

@@ -1,6 +1,6 @@
 class AddGroupAssociationToBook < ActiveRecord::Migration[5.1]
   def change
-    add_column :groups, :book_id, :integer
-    add_index 'groups', ['book_id'], name: 'index_book_id'
+    add_column :books, :group_id, :integer
+    add_index 'books', ['group_id'], name: 'index_group_id'
   end
 end
