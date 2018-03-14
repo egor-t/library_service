@@ -16,3 +16,10 @@
 
 coverage
 .byebug_history
+
+# Ignore encrypted secrets key file.
+config/secrets.yml.key
+config/secrets_backup.yml
+
+# Ignore application configuration
+/config/application.yml

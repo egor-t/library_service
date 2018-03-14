@@ -1,0 +1,4 @@
+bucket: "dev-library-service"
+access_key_id: "AKIAJY5XDBFW4KGJTKGQ"
+secret_access_key: "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"
+s3_region: "us-east-1"

@@ -20,8 +20,9 @@ gem 'jquery-rails'
 gem 'inherited_resources', git: 'https://github.com/activeadmin/inherited_resources'
 gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
 gem 'devise'
-gem 'cancan'
 gem 'kaminari'
+gem "paperclip"
+gem 'aws-sdk', '~> 3'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

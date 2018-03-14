@@ -1,4 +1,4 @@
 class Author < ApplicationRecord
-  has_many :books, dependent: :destroy
+  has_and_belongs_to_many :books, uniq: true
   validates :name, presence: true, length: { maximum: 255 }
 end
