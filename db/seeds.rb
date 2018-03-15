@@ -5,4 +5,7 @@ AdminUser.destroy_all
 
 Author.create!(name: 'Aloha')
 Group.create!(name: 'General')
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
+# only for pat project
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password',
+                  role: 'admin')
