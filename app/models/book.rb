@@ -11,6 +11,8 @@ class Book < ApplicationRecord
   private
 
   def set_default_group
-    Group.any? ? self.group_id = Group.first.id : Group.create!(name: 'General')
+    if group_id.nil?
+      Group.any? ? self.group_id = Group.first.id : Group.create!(name: 'General')
+    end
   end
 end

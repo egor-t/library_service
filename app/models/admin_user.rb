@@ -1,6 +1,6 @@
 class AdminUser < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, 
+  ROLES = %w[admin group author].freeze
+
+  devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
 end
